@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Machine</title>
+    <style>
+        :root {
+            --bg-color: #050505;
+            --text-color: #c0c0c0;
+            --accent-color: #33ff00;
+            --font-stack: "Courier New", Courier, monospace;
+        }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-stack);
+            font-size: 16px;
+            line-height: 1.6;
+            margin: 0;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+        }
+        .container { max-width: 650px; width: 100%; }
+        h1 {
+            font-size: 24px;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 40px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 20px;
+        }
+        p { margin-bottom: 20px; }
+        .highlight { color: #fff; font-weight: bold; }
+        
+        /* Cursor Animation */
+        .cursor {
+            display: inline-block;
+            width: 10px;
+            height: 18px;
+            background-color: var(--accent-color);
+            animation: blink 1s step-end infinite;
+            vertical-align: text-bottom;
+        }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+
+        /* COLLAPSIBLE SECTIONS */
+        details {
+            margin-bottom: 20px;
+            border: 1px dashed #333;
+            padding: 10px;
+        }
+        
+        details[open] {
+            border: 1px solid var(--accent-color);
+        }
+
+        summary {
+            cursor: pointer;
+            list-style: none;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            font-size: 14px;
+            font-weight: bold;
+            outline: none;
+        }
+
+        /* Hide default triangle */
+        summary::-webkit-details-marker { display: none; }
+
+        /* Custom [+] indicator */
+        summary::after {
+            content: " [+]";
+            float: right;
+            color: #555;
+        }
+
+        details[open] summary::after {
+            content: " [-]";
+            color: var(--accent-color);
+        }
+
+        /* Content Animation */
+        details p {
+            margin-top: 15px;
+            margin-bottom: 0;
+            animation: fadein 0.5s;
+        }
+
+        @keyframes fadein {
+            from { opacity: 0; }
+            to   { opacity: 1; }
+        }
+
+        footer {
+            margin-top: 100px;
+            font-size: 12px;
+            color: #444;
+            border-top: 1px solid #111;
+            padding-top: 20px;
+        }
+        @media (max-width: 600px) { body { padding: 20px; } }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Memory Machine<span class="cursor"></span></h1>
+
+        <p>Memory Machine is an app to store, track and remember important events in your life.</p>
+        <p>Your data is stored locally on your device. You own it and control access.</p>
+
+        <details>
+            <summary>> The Philosophy</summary>
+            <p>Memory Machine is a <span class="highlight">local-first app</span> for your life experience. It is a digital vault of things you want to remember that lives on your hardware, not in the cloud.</p>
+            <p>You can save a copy of your Memory Machine to transfer to other devices, but... You own and are responsible for your Memory Machine. It can be lost.</p>
+        </details>
+
+        <details>
+            <summary>> System Capabilities</summary>
+            <p>* <strong>Encrypted Local Storage:</strong> Local device storage: You have complete control/visibility over your data.</p>
+            <p>* <strong>Recurring Memory Logic:</strong> Track variable dates (e.g., Thanksgiving) and annual events like birthdays.</p>
+            <p>* <strong>Journaling:</strong> Add standalone journal entries or connect them to your stored memories.</p>
+            <p>* <strong>Portability:</strong> Full export to JSON standard.</p>
+            <p>* <strong>The Nuke Protocol:</strong> A verified, irreversible self-destruct mechanism to delete your entire Memory Machine (with safeguards).</p>
+            <p>* <strong>Air-Gapped by Design:</strong> No internet connection required (External links require connectivity; Local vault works offline).</p>
+        </details>
+
+        <p>Coming soon</p>
+
+        <footer>
+            &copy; 2026 MEMORY MACHINE
+        </footer>
+    </div>
+
+</body>
+</html>
